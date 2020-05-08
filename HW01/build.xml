@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="run" name="HW01" basedir=".">
+	<property environment="env" />
+
+	<path id="test.classpath">
+		<pathelement path="bin" />
+	</path>
+
+	<target name="run" depends="compile">
+		<java classname="edu.umb.cs681.hw01.MyExampleObservableTest">
+			<classpath path="bin" />
+		</java>
+	</target>
+
+	<target name="compile">
+		<delete dir="bin" />
+		<mkdir dir="bin" />
+		<javac includeantruntime="true" srcdir="src" destdir="bin">
+			<classpath refid="test.classpath" />
+		</javac>
+	</target>
+	
+</project>
